@@ -23,7 +23,7 @@ public class main {
               } else if (choice.equals("0")) {
                   break;
               } else if (!choice.equals("1")&&!choice.equals("0")) {
-                  System.out.println("Vui lòng chỉ chọn 1 hoặc 2 ");
+                  System.out.println("Vui lòng chỉ chọn 1 hoặc 0 ");
               }
 
         }

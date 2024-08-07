@@ -1,4 +1,5 @@
 package Function;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 //code by pham trung duc
@@ -7,10 +8,15 @@ Scanner duc = new Scanner(System.in);
 
 
     public void chon(int sodu){
+
+        ArrayList<String>lichsu=new ArrayList<>();
+
+
         System.out.println("Số dư của bạn là: "+sodu+" VND");
         boolean mychcek=true;
 
         while(mychcek){
+
             System.out.println("------- Nhà Cái Hàng Đầu Ninh Bình -------");
             System.out.print("Xin mời đặt được (TAI,XIU):");
             String choice= duc.nextLine();
@@ -60,8 +66,8 @@ Scanner duc = new Scanner(System.in);
                         System.out.println("Bạn thua."+"-"+ketqua);
                         sodu=(sodu-sotiendat);
                         System.out.println("số dư của bạn là:"+sodu+"VND");
-                    }
 
+                    }
 
                 }catch (InterruptedException e){
                     System.out.println(e);
@@ -100,6 +106,27 @@ Scanner duc = new Scanner(System.in);
 
 
             }
+
+
+            if(result>10){
+                lichsu.add("TAI");
+            }else{
+                lichsu.add("XIU");
+            }
+
+
+
+
+
+                for(String s:lichsu){
+                    System.out.print("Lịch sử phiên:");
+                    System.out.print(s+" ");
+                    System.out.println();
+                }
+
+
+
+
         }
 
 

@@ -9,8 +9,8 @@ public class Manager_Account {
     ArrayList<ACCOUNT>list=new ArrayList<>();
     Random random=new Random();
    public  Manager_Account(){
-       ACCOUNT admin=new ACCOUNT("admin","111");
-       list.add(admin);
+       ACCOUNT phamtrungduc=new ACCOUNT("phamtrungduc","111");
+       list.add(phamtrungduc);
    }
 
 
