@@ -9,7 +9,7 @@ public class Manager_Account {
     ArrayList<ACCOUNT>list=new ArrayList<>();
     Random random=new Random();
    public  Manager_Account(){
-       ACCOUNT phamtrungduc=new ACCOUNT("phamtrungduc","111");
+       ACCOUNT phamtrungduc=new ACCOUNT("1","1");
        list.add(phamtrungduc);
    }
 
@@ -34,9 +34,11 @@ public class Manager_Account {
                                System.out.println("(System)=> Tên phải dài hơn 8 ký tự ");
                                continue;
                            }
+                           // kiểm tra xem tên tài khoản đã tồn tại trong list chưa
                            for(int i=0;i<list.size();i++){
                                if(list.get(i).getName().equals(name)){
                                    mycheck1=true;
+                                   break;
                                }
                            }
                            if(mycheck1){
@@ -60,12 +62,16 @@ public class Manager_Account {
                                    list.add(admin);
                                    int time=random.nextInt(2,50);
                                    for( int i=0;i<=time;i++){
+                                       System.out.print("Vui lòng đợi tí");
+                                       Thread.sleep(500);
                                        System.out.print("\r");
                                        System.out.print("Loading");
-                                       for( int j=0;j<=i;j++){
+                                       for( int j=0;j<4;j++){
+
                                            System.out.print(".");
+                                           Thread.sleep(500);
                                        }
-                                       Thread.sleep(500);
+
                                    }
 
                                    System.out.print("\r");
@@ -97,6 +103,7 @@ public class Manager_Account {
         System.out.println("Tên tài khoản hoặc mật khẩu không chính xác.");
         return false;
     }
+
     }
 
 
