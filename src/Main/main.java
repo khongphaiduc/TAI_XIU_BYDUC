@@ -29,11 +29,10 @@ public class main {
         }
 
         while(true){
-
-            System.out.println("------ Đăng nhập ------");
-            System.out.print("Nhập tài khoản:");
-            String tk= duc.nextLine();
-            System.out.print("Nhập mật khẩu:");
+            System.out.println("\r------ Đăng nhập ------");
+            System.out.print("\rNhập tài khoản:");
+            String tk=duc.nextLine();
+            System.out.print("\rNhập mật khẩu:");
             String mk=duc.nextLine();
 
             if(obj2.SignIn(tk,mk)){

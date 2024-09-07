@@ -19,7 +19,7 @@ Scanner duc = new Scanner(System.in);
 
             System.out.println("------- Nhà Cái Hàng Đầu Ninh Bình -------");
             System.out.print("Xin mời đặt cược (TAI,XIU):");
-            String choice= duc.nextLine();
+            String choice= duc.nextLine().trim();
             if(!choice.equals("xiu")&&!choice.equals("tai")){
                 System.out.println("(Hệ thống)=>lựa chọn của bạn không hơp lệ");
                continue; // khi câu lệnh được gọi trong vòng lặp thì tất cả các câu lệnh sau continue đề bị bỏ qua và  bắt đầu vòng lặp mới.
@@ -40,7 +40,14 @@ Scanner duc = new Scanner(System.in);
 
             if(sotiendat>sodu){
                 System.out.println("Số dư của bạn không đủ để cược !");
-                continue;
+                System.out.println("Enter q để quay trở lại trang nạp tiền:");
+                String s=duc.nextLine();
+                if(s.equals("q")){
+                    break;
+                }else{
+                    continue;
+                }
+
             } else if (sotiendat<1000) {
                 System.out.println("Số tiền tối thiếu để đặt cược là 1000 VND");
                 continue;
@@ -53,9 +60,9 @@ Scanner duc = new Scanner(System.in);
             int ketqua=0;
             Random random= new Random();
 
-            int a=random.nextInt(1,6)+1;
-            int b=random.nextInt(1,6)+1;
-            int c=random.nextInt(1,6)+1;
+            int a=random.nextInt(1,7);
+            int b=random.nextInt(1,7);
+            int c=random.nextInt(1,7);
 
             int result=a+b+c;
 
@@ -75,6 +82,12 @@ Scanner duc = new Scanner(System.in);
                         ketqua  =sotiendat*2;
                         System.out.println("Chúc mừng bạn đã thắng."+"+"+ketqua);
                         sodu=sodu+(ketqua-sotiendat);
+                        if(sodu<1000){
+                            System.out.println(String.format("%-50s","Thông Báo"));
+                            System.out.println("Tài khoản của bạn không đủ để tham gia lần cược tiếp theo " +
+                                    "vui lòng nạp thêm tiền tránh bị gián đoạn cuộc chơi ");
+                            System.out.println("Xin  cảm ơn !");
+                        }
                         System.out.println("số dư của bạn là:"+sodu+"VND");
                     }else{
 
@@ -83,7 +96,12 @@ Scanner duc = new Scanner(System.in);
                         System.out.println("Bạn thua."+"-"+ketqua);
                         sodu=(sodu-sotiendat);
                         System.out.println("số dư của bạn là:"+sodu+"VND");
-
+                        if(sodu<1000){
+                            System.out.println(String.format("%-50s","Thông Báo"));
+                            System.out.println("Tài khoản của bạn không đủ để tham gia lần cược tiếp theo " +
+                                    "vui lòng nạp thêm tiền tránh bị gián đoạn cuộc chơi ");
+                            System.out.println("Xin  cảm ơn !");
+                        }
                     }
 
                 }catch (InterruptedException e){
@@ -110,12 +128,24 @@ Scanner duc = new Scanner(System.in);
                         System.out.println("Chúc mừng bạn đã thắng."+"+"+ketqua);
                         sodu=sodu+(ketqua-sotiendat);
                         System.out.println("số du của bạn là:"+sodu+"VND");
+                        if(sodu<1000){
+                            System.out.println(String.format("%-50s","Thông Báo"));
+                            System.out.println("Tài khoản của bạn không đủ để tham gia lần cược tiếp theo " +
+                                    "vui lòng nạp thêm tiền tránh bị gián đoạn cuộc chơi ");
+                            System.out.println("Xin  cảm ơn !");
+                        }
 
                     }else{
                         ketqua=sotiendat;
                         System.out.println("Bạn thua."+"-"+ketqua);
                         sodu=(sodu-sotiendat);
                         System.out.println("số du của bạn là:"+sodu+"VND");
+                        if(sodu<1000){
+                            System.out.println(String.format("%-1000s","Thông Báo"));
+                            System.out.println("Tài khoản của bạn không đủ để tham gia lần cược tiếp theo " +
+                                    "vui lòng nạp thêm tiền tránh bị gián đoạn cuộc chơi ");
+                            System.out.println("Xin  cảm ơn !");
+                        }
                     }
 
                 }catch (InterruptedException f){
@@ -132,9 +162,9 @@ Scanner duc = new Scanner(System.in);
                 lichsu.add("XIU");
             }
 
-
+              int t=0;
                 for(String s:lichsu){
-                    System.out.print("Lịch sử phiên:");
+                    System.out.print("Lịch sử phiên"+(++t)+": ");
                     System.out.print(s+" ");
                     System.out.println();
                 }

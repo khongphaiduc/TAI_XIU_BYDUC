@@ -9,7 +9,7 @@ public class Manager_Account {
     ArrayList<ACCOUNT>list=new ArrayList<>();
     Random random=new Random();
    public  Manager_Account(){
-       ACCOUNT phamtrungduc=new ACCOUNT("1","1");
+       ACCOUNT phamtrungduc=new ACCOUNT("phamtrungduc","10112004");
        list.add(phamtrungduc);
    }
 
@@ -44,9 +44,8 @@ public class Manager_Account {
                            if(mycheck1){
 
                                System.out.println("(Hệ Thống)=>Tài khoản đã tồn tại");
-
                            }
-                           else{
+                             else{
                                try{
                                    System.out.print("Nhập mật khẩu :");
                                    String pass=duc.nextLine();
@@ -98,6 +97,10 @@ public class Manager_Account {
     ACCOUNT t1 = new ACCOUNT(name,password);
     if(list.contains(t1)){
         System.out.println(" -Đăng nhâp thành công- ");
+        System.out.println("-------CHÀO MỪNG BẠN ĐẾN VỚI NB88 NHÀ CÁI HÀNG ĐẦU NINH BÌNH------");
+        System.out.println("=>Với tỉ lệ hoàn cược lên đến 100%");
+        System.out.println("=>Nạp rút không giới hạn");
+        System.out.println("=>Uy tín xanh chín ");
         return  true;
     }else{
         System.out.println("Tên tài khoản hoặc mật khẩu không chính xác.");
